@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Primary SEO -->
+<title>V Vault — Private Photo &amp; Video Vault for Android</title>
+<meta name="description" content="V Vault is a private photo and video vault app for Android. Lock your media behind a password, PIN, or fingerprint. No account required, and nothing leaves your device unless you choose to back it up.">
+<link rel="canonical" href="https://thindyuvraj141.github.io/VVault-web/">
+<meta name="robots" content="index, follow">
+<meta name="author" content="V Vault">
+<meta name="keywords" content="photo vault, video vault, hide photos, lock photos app, private gallery, secure photo vault Android, PIN lock photos, photo locker app">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="V Vault">
+<meta property="og:title" content="V Vault — Private Photo & Video Vault for Android">
+<meta property="og:description" content="Lock your private photos and videos behind a password or PIN. No account, no cloud by default — your media stays on your device unless you choose to back it up.">
+<meta property="og:url" content="https://thindyuvraj141.github.io/VVault-web/">
+<meta property="og:image" content="https://thindyuvraj141.github.io/VVault-/icon-512.png">
+<meta property="og:image:width" content="512">
+<meta property="og:image:height" content="512">
+<meta property="og:locale" content="en_IN">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="V Vault — Private Photo & Video Vault for Android">
+<meta name="twitter:description" content="Lock your private photos and videos behind a password or PIN. Nothing leaves your device unless you choose.">
+<meta name="twitter:image" content="https://thindyuvraj141.github.io/VVault-/icon-512.png">
+
+<!-- Icons -->
+<link rel="icon" href="https://thindyuvraj141.github.io/VVault-/icon-192.png" sizes="192x192">
+<link rel="apple-touch-icon" href="https://thindyuvraj141.github.io/VVault-/icon-180.png">
+<meta name="theme-color" content="#0E1113">
+
+<!-- Structured data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "V Vault",
+  "operatingSystem": "ANDROID",
+  "applicationCategory": "UtilitiesApplication",
+  "description": "V Vault is a private photo and video vault app that locks your media behind a password, PIN, or fingerprint. No account required, and nothing leaves your device unless you choose to back it up.",
+  "url": "https://thindyuvraj141.github.io/VVault-web/",
+  "downloadUrl": "https://github.com/thindyuvraj141/VVault-/releases/latest",
+  "image": "https://thindyuvraj141.github.io/VVault-/icon-512.png",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "thindyuvraj141"
+  }
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0E1113;
+    --panel:#171B1E;
+    --panel-2:#1D2226;
+    --ink:#EDEDEA;
+    --ink-dim:#9DA3A8;
+    --ink-faint:#5F666B;
+    --gold:#C6A15B;
+    --gold-bright:#E3C07E;
+    --line:rgba(255,255,255,0.08);
+    --radius:4px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'Inter',sans-serif;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2{
+    font-family:'Fraunces',serif;
+    font-weight:500;
+    letter-spacing:-0.01em;
+  }
+  a{color:inherit;}
+  img{max-width:100%;display:block;}
+  .wrap{max-width:1040px;margin:0 auto;padding:0 24px;}
+  :focus-visible{outline:2px solid var(--gold);outline-offset:2px;}
+
+  /* ---------- header ---------- */
+  header{
+    padding:22px 0;
+    border-bottom:1px solid var(--line);
+  }
+  .header-row{display:flex;align-items:center;justify-content:space-between;}
+  .mark{display:flex;align-items:center;gap:10px;text-decoration:none;}
+  .mark-icon{
+    width:30px;height:30px;border-radius:8px;
+    background:linear-gradient(160deg,#1B1F22,#0C0E10);
+    border:1px solid var(--line);
+    display:flex;align-items:center;justify-content:center;
+  }
+  .mark-name{font-family:'Fraunces',serif;font-size:17px;font-weight:600;color:var(--ink);}
+  header nav a{
+    font-size:13.5px;color:var(--ink-dim);text-decoration:none;margin-left:26px;
+  }
+  header nav a:hover{color:var(--ink);}
+
+  /* ---------- hero ---------- */
+  .hero{
+    padding:64px 0 56px;
+    display:grid;
+    grid-template-columns:1fr;
+    gap:40px;
+    align-items:center;
+  }
+  @media(min-width:820px){
+    .hero{grid-template-columns:1.05fr 0.95fr;padding:96px 0 84px;}
+  }
+  .hero h1{
+    font-size:38px;
+    line-height:1.14;
+    max-width:13ch;
+  }
+  @media(min-width:820px){ .hero h1{font-size:50px;} }
+  .hero p{
+    color:var(--ink-dim);
+    font-size:16px;
+    max-width:40ch;
+    margin-top:18px;
+  }
+  .hero-ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px;align-items:center;}
+  .btn{
+    display:inline-flex;align-items:center;gap:9px;
+    padding:14px 24px;border-radius:3px;
+    font-size:14.5px;font-weight:600;
+    text-decoration:none;border:1px solid transparent;
+    transition:background .15s,border-color .15s,color .15s,transform .1s;
+  }
+  .btn:active{transform:scale(.98);}
+  .btn-gold{background:var(--gold);color:#12100A;}
+  .btn-gold:hover{background:var(--gold-bright);}
+  .btn-line{border-color:var(--line);color:var(--ink);}
+  .btn-line:hover{border-color:var(--ink-dim);}
+  .hero-meta{color:var(--ink-faint);font-size:12.5px;margin-top:14px;}
+
+  /* ---------- dial illustration ---------- */
+  .dial-wrap{display:flex;justify-content:center;}
+  .dial{width:min(320px,80vw);height:auto;}
+  .dial-face{fill:var(--panel);stroke:var(--line);stroke-width:1;}
+  .dial-ring{fill:none;stroke:var(--line);stroke-width:1;}
+  .dial-tick{stroke:var(--ink-faint);stroke-width:1.5;}
+  .dial-tick.major{stroke:var(--gold);stroke-width:2.5;}
+  .dial-center{fill:var(--panel-2);stroke:var(--gold);stroke-width:1.5;}
+  .dial-lock-body{fill:none;stroke:var(--gold);stroke-width:3;stroke-linecap:round;stroke-linejoin:round;}
+
+  /* ---------- statement ---------- */
+  .statement{
+    padding:56px 0;
+    border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+  }
+  .statement .label{
+    font-size:13px;color:var(--gold);font-weight:600;
+    margin-bottom:14px;
+  }
+  .statement p{
+    font-family:'Fraunces',serif;
+    font-weight:400;
+    font-size:24px;
+    line-height:1.45;
+    max-width:34ch;
+    color:var(--ink);
+  }
+  @media(min-width:820px){ .statement p{font-size:28px;} }
+
+  /* ---------- feature ledger ---------- */
+  .ledger{padding:64px 0;}
+  .ledger h2{font-size:26px;margin-bottom:8px;}
+  .ledger > p{color:var(--ink-dim);font-size:15px;max-width:46ch;margin-bottom:36px;}
+  .entry{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:6px;
+    padding:22px 0;
+    border-top:1px solid var(--line);
+  }
+  .entry:last-child{border-bottom:1px solid var(--line);}
+  @media(min-width:720px){
+    .entry{grid-template-columns:240px 1fr;gap:24px;align-items:start;}
+  }
+  .entry-name{font-weight:600;font-size:15.5px;}
+  .entry-desc{color:var(--ink-dim);font-size:14.5px;max-width:52ch;}
+
+  /* ---------- how it works ---------- */
+  .steps{padding:8px 0 64px;}
+  .steps h2{font-size:26px;margin-bottom:36px;}
+  .step-grid{display:grid;grid-template-columns:1fr;gap:28px;}
+  @media(min-width:720px){ .step-grid{grid-template-columns:repeat(3,1fr);} }
+  .step-num{
+    font-family:'Fraunces',serif;color:var(--gold);font-size:15px;
+    margin-bottom:10px;
+  }
+  .step h3{font-size:15.5px;font-weight:600;margin-bottom:6px;font-family:'Inter',sans-serif;}
+  .step p{color:var(--ink-dim);font-size:14px;}
+
+  /* ---------- FAQ ---------- */
+  .faq{padding:8px 0 64px;border-top:1px solid var(--line);}
+  .faq h2{font-size:26px;margin:56px 0 28px;}
+  details{
+    border-bottom:1px solid var(--line);
+    padding:18px 0;
+  }
+  summary{
+    cursor:pointer;list-style:none;font-weight:600;font-size:15px;
+    display:flex;justify-content:space-between;align-items:center;gap:16px;
+  }
+  summary::-webkit-details-marker{display:none;}
+  summary::after{
+    content:'+';color:var(--gold);font-size:20px;flex-shrink:0;
+    font-family:'Fraunces',serif;transition:transform .2s;
+  }
+  details[open] summary::after{transform:rotate(45deg);}
+  details p{color:var(--ink-dim);font-size:14.5px;margin-top:12px;max-width:60ch;}
+
+  /* ---------- cta panel ---------- */
+  .cta-panel{
+    margin:20px 0 72px;
+    padding:44px 32px;
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    background:linear-gradient(160deg,#171B1E,#101315);
+    text-align:center;
+  }
+  .cta-panel h2{font-size:26px;margin-bottom:10px;}
+  .cta-panel p{color:var(--ink-dim);font-size:15px;margin-bottom:26px;}
+  .cta-panel .hero-ctas{justify-content:center;}
+
+  /* ---------- footer ---------- */
+  footer{
+    border-top:1px solid var(--line);
+    padding:28px 0;
+    display:flex;flex-wrap:wrap;gap:14px;
+    justify-content:space-between;
+    color:var(--ink-faint);font-size:13px;
+  }
+  footer .flinks a{color:var(--ink-faint);text-decoration:none;margin-left:18px;}
+  footer .flinks a:hover{color:var(--ink-dim);}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap header-row">
+    <a class="mark" href="#top">
+      <div class="mark-icon">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <rect x="5" y="10" width="14" height="10" rx="2" stroke="#C6A15B" stroke-width="1.8"/>
+          <path d="M8 10V7a4 4 0 0 1 8 0v3" stroke="#C6A15B" stroke-width="1.8" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <span class="mark-name">V Vault</span>
+    </a>
+    <nav aria-label="Primary">
+      <a href="#why">Why</a>
+      <a href="#features">Features</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="hero wrap" id="top">
+  <div>
+    <h1>Keep what's yours, yours.</h1>
+    <p>V Vault locks away your private photos and videos behind a password or PIN. No account, no cloud by default — your media stays on your device unless you choose to back it up.</p>
+    <div class="hero-ctas">
+      <a class="btn btn-gold" href="https://github.com/thindyuvraj141/VVault-/releases/latest" rel="noopener">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3v12m0 0l-5-5m5 5l5-5M5 21h14" stroke="#12100A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Download APK
+      </a>
+      <a class="btn btn-line" href="#features">See how it works</a>
+    </div>
+    <div class="hero-meta">Free · Android · No account needed</div>
+  </div>
+  <div class="dial-wrap">
+    <svg class="dial" viewBox="0 0 300 300" role="img" aria-label="Combination lock dial illustration">
+      <circle class="dial-face" cx="150" cy="150" r="128"/>
+      <circle class="dial-ring" cx="150" cy="150" r="108"/>
+      <g id="ticks"></g>
+      <circle class="dial-center" cx="150" cy="150" r="46"/>
+      <path class="dial-lock-body" d="M136 148v-14a14 14 0 0 1 28 0v14" />
+      <rect x="130" y="148" width="40" height="30" rx="4" fill="none" stroke="#C6A15B" stroke-width="3"/>
+    </svg>
+  </div>
+</section>
+
+<script>
+  const ns = "http://www.w3.org/2000/svg";
+  const g = document.getElementById('ticks');
+  for(let i=0;i<40;i++){
+    const angle = (i/40) * 2*Math.PI;
+    const major = i % 5 === 0;
+    const rOuter = 128;
+    const rInner = major ? 112 : 119;
+    const x1 = 150 + rOuter*Math.cos(angle);
+    const y1 = 150 + rOuter*Math.sin(angle);
+    const x2 = 150 + rInner*Math.cos(angle);
+    const y2 = 150 + rInner*Math.sin(angle);
+    const line = document.createElementNS(ns,'line');
+    line.setAttribute('x1',x1);line.setAttribute('y1',y1);
+    line.setAttribute('x2',x2);line.setAttribute('y2',y2);
+    line.setAttribute('class', major ? 'dial-tick major' : 'dial-tick');
+    g.appendChild(line);
+  }
+</script>
+
+<section class="statement wrap" id="why">
+  <div class="label">Why a vault, not just a hidden folder</div>
+  <p>A folder can be found. A vault is built so that even if someone picks up your phone, your private moments stay private — encrypted, locked, and yours alone.</p>
+</section>
+
+<section class="ledger wrap" id="features">
+  <h2>What's inside</h2>
+  <p>Everything V Vault does is built around one idea: your media, under your control.</p>
+
+  <div class="entry">
+    <div class="entry-name">Password or PIN lock</div>
+    <div class="entry-desc">Set a password, a numeric PIN, or unlock with your fingerprint or face — your choice, set once and remembered.</div>
+  </div>
+  <div class="entry">
+    <div class="entry-name">Private folders</div>
+    <div class="entry-desc">Organize hidden photos and videos into folders you name, so your vault stays as tidy as your camera roll.</div>
+  </div>
+  <div class="entry">
+    <div class="entry-name">Your own Google Drive backup</div>
+    <div class="entry-desc">Turn on backup and V Vault uploads an encrypted copy to a folder in your own Drive. Nothing is sent to any V Vault server.</div>
+  </div>
+  <div class="entry">
+    <div class="entry-name">Restore on a new device</div>
+    <div class="entry-desc">Signed in with the same Google account, restore your vault from a previous backup in a few taps.</div>
+  </div>
+  <div class="entry">
+    <div class="entry-name">Offline by default</div>
+    <div class="entry-desc">Without backup turned on, nothing ever leaves your device. V Vault works the same with no internet connection at all.</div>
+  </div>
+</section>
+
+<section class="steps wrap">
+  <h2>Getting started takes a minute</h2>
+  <div class="step-grid">
+    <div class="step">
+      <div class="step-num">First</div>
+      <h3>Download and install</h3>
+      <p>Get the APK from GitHub Releases and install it on your Android phone.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">Then</div>
+      <h3>Set your password or PIN</h3>
+      <p>Choose how you'll unlock your vault. No email, no sign-up required.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">Finally</div>
+      <h3>Move media into the vault</h3>
+      <p>Import photos and videos, organize them into folders, and they're locked.</p>
+    </div>
+  </div>
+</section>
+
+<section class="faq wrap" id="faq">
+  <h2>Questions people ask</h2>
+
+  <details>
+    <summary>Does V Vault need an internet connection?</summary>
+    <p>No. Locking, viewing, and organizing your media all work fully offline. An internet connection is only used if you turn on optional Google Drive backup.</p>
+  </details>
+  <details>
+    <summary>Can V Vault see my photos?</summary>
+    <p>No. Your media and password never leave your device unless you choose to back up, and even then the backup is encrypted before it's uploaded to your own Google Drive.</p>
+  </details>
+  <details>
+    <summary>What happens if I forget my password?</summary>
+    <p>You can reset it by answering the security question you set on first launch. This happens entirely on your device.</p>
+  </details>
+  <details>
+    <summary>Is V Vault free?</summary>
+    <p>Yes, V Vault is free to download and use.</p>
+  </details>
+</section>
+
+<section class="wrap">
+  <div class="cta-panel">
+    <h2>Ready to lock things down?</h2>
+    <p>Set a password, and your first private folder is one tap away.</p>
+    <div class="hero-ctas">
+      <a class="btn btn-gold" href="https://github.com/thindyuvraj141/VVault-/releases/latest" rel="noopener">Download APK</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="wrap">
+  <div>© 2026 V Vault</div>
+  <div class="flinks">
+    <a href="privacy-policy.html">Privacy Policy</a>
+    <a href="terms-of-service.html">Terms</a>
+    <a href="mailto:thindyuvraj141@gmail.com">Contact</a>
+  </div>
+</footer>
+
+</body>
+</html>
